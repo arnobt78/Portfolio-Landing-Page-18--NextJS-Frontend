@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Experience section: vertical timeline from portfolioData.experience (company, role, period, bullets).
+ * Each item animates in on scroll (whileInView); timeline dot and left border for visual structure.
+ */
 import React from "react";
 
 import { portfolioData } from "@/data/portfolio";

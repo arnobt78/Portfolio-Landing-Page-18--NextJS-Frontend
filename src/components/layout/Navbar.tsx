@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Navbar: fixed header with in-page links (#about, #experience, #projects, #contact),
+ * scroll-based background, active-section highlight via IntersectionObserver, and mobile hamburger menu.
+ */
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -7,6 +11,7 @@ import { motion } from "framer-motion";
 import { TbMenu2, TbX } from "react-icons/tb";
 import { portfolioData } from "@/data/portfolio";
 
+/** Section ids must match the href hash (e.g. #about) and element id="about" on the page. */
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
@@ -19,6 +24,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
+  /* Toggle navbar background when user scrolls past 50px. */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -30,6 +36,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  /* IntersectionObserver: which section is in view (rootMargin -50% centers the "active" zone). */
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -61,6 +68,7 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  /** Smooth scroll to section and prevent hash in URL; closes mobile menu if open. */
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,

@@ -1,14 +1,17 @@
+/** Single social link: platform name, URL, and icon key (must match SocialIcons iconMap). */
 export interface SocialLink {
   platform: string;
   url: string;
   icon: string;
 }
 
+/** Optional skill item (e.g. for future icon-per-skill); currently skills are string arrays. */
 export interface Skill {
   name: string;
   icon?: string;
 }
 
+/** One job/role entry for the Experience timeline. */
 export interface Experience {
   company: string;
   role: string;
@@ -17,6 +20,7 @@ export interface Experience {
   logo?: string;
 }
 
+/** One project for the Projects grid (thumbnail path is under public/). */
 export interface Project {
   title: string;
   description: string;
@@ -26,6 +30,7 @@ export interface Project {
   thumbnail: string;
 }
 
+/** Root data shape: all sections read from this single object. Edit to customize the portfolio. */
 export interface PortfolioData {
   name: string;
   role: string;
@@ -43,6 +48,7 @@ export interface PortfolioData {
   projects: Project[];
 }
 
+/** Single source of truth for hero, experience, skills, projects, and social links. */
 export const portfolioData: PortfolioData = {
   name: "John Doe",
   role: "Android & Flutter Developer",
@@ -123,7 +129,7 @@ export const portfolioData: PortfolioData = {
       period: "May, 2023 - Present",
       description: [
         "Built PrimeSecure MDM for PrimeOS 3.0, leveraging DevicePolicyManager.",
-        "Enhanced Prime Browser with feaures like background playback, MDM, etc.",
+        "Enhanced Prime Browser with features like background playback, MDM, etc.",
         "Created SOPs and Scripts for syncing, managing and building Chromium.",
         "Migrated App Store storage to Cloudflare R2, saving over $2000/month.",
         "Developed internal APIs, tools, & the early Cloud PC backend with Cashfree PG.",

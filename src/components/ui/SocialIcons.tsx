@@ -1,3 +1,7 @@
+/**
+ * Social links from portfolioData.social: maps platform/icon names to Tabler icons.
+ * variant "default" = hero (circles with border); "footer" = compact icon-only links.
+ */
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import {
@@ -9,6 +13,7 @@ import {
   TbMail,
 } from "react-icons/tb";
 
+/** Platform/icon key -> React icon component; used for both Hero and Footer. */
 const iconMap: Record<
   string,
   React.ComponentType<{ size?: number; className?: string }>

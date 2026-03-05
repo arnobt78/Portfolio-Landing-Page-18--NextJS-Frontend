@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Contact section: contact info (email from data, location) + form that POSTs to Web3Forms API.
+ * Form state: idle | loading | success | error. Requires NEXT_PUBLIC_WEB3FORMS_KEY for real submissions.
+ */
 import React, { useState, useCallback } from "react";
 import { portfolioData } from "@/data/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -22,6 +26,7 @@ export const ContactSection = React.memo(function ContactSection() {
     message: "",
   });
 
+  /** Submit to Web3Forms; on success reset form and show success message; on failure show error. */
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
@@ -53,7 +58,7 @@ export const ContactSection = React.memo(function ContactSection() {
           setFormState("error");
           setTimeout(() => setFormState("idle"), 5000);
         }
-      } catch (error) {
+      } catch {
         setFormState("error");
         setTimeout(() => setFormState("idle"), 5000);
       }
@@ -198,7 +203,7 @@ export const ContactSection = React.memo(function ContactSection() {
                 <div className="flex items-center gap-2 text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg px-4 py-3">
                   <TbCircleCheck size={20} />
                   <span>
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </span>
                 </div>
               )}

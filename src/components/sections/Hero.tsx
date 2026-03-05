@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Hero section: intro line, name, role, about text, profile image, social icons,
+ * and CTAs (Projects = smooth scroll to #projects, Resume = external link). id="about" for nav.
+ */
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import { motion } from "framer-motion";
@@ -9,6 +13,7 @@ import Image from "next/image";
 import { SocialIcons } from "@/components/ui/SocialIcons";
 
 export const HeroSection = React.memo(function HeroSection() {
+  /** Smooth scroll to #projects and keep URL without hash. */
   const handleScrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const element = document.getElementById("projects");

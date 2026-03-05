@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Projects section: grid of ProjectCard components from portfolioData.projects.
+ * id="projects" is used by navbar and hero CTA for smooth scrolling.
+ */
 import { portfolioData } from '@/data/portfolio';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ProjectCard } from '@/components/ui/ProjectCard';

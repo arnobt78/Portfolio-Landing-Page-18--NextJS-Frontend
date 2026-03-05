@@ -1,11 +1,16 @@
 "use client";
 
+/**
+ * Tech Stack section: four categories (Mobile, Libraries, Web, Tools) from portfolioData.skills.
+ * SkillCategory renders a card per category with pill-style skill tags; animates in on scroll.
+ */
 import React from "react";
 
 import { portfolioData } from "@/data/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { motion } from "framer-motion";
 
+/** Reusable card for one skill category (title + list of skill strings). */
 const SkillCategory = React.memo(function SkillCategory({
   title,
   skills,

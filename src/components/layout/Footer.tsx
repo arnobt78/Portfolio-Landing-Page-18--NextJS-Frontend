@@ -1,3 +1,6 @@
+/**
+ * Footer: copyright year, portfolio name, optional tagline, and social icons (footer variant).
+ */
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import { SocialIcons } from "@/components/ui/SocialIcons";

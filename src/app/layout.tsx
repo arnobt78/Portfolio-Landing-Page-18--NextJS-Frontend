@@ -1,3 +1,7 @@
+/**
+ * Root layout: wraps all pages with shared UI (Navbar, Footer), fonts, global styles,
+ * SEO metadata, and optional Google Analytics. Used by Next.js App Router for every route.
+ */
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -7,29 +11,39 @@ import { Footer } from "@/components/layout/Footer";
 import { portfolioData } from "@/data/portfolio";
 import { StructuredData } from "@/components/seo/StructuredData";
 
+/** Viewport config for mobile scaling and width; used by Next.js for meta viewport tag. */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
+/** Geist Sans font; CSS variable --font-geist-sans is applied to body for Tailwind. */
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+/** Geist Mono for code/accents; variable --font-geist-mono. */
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
+const siteUrl = "https://portfolio-ui-18.vercel.app";
+const siteTitle = "John Doe's Portfolio";
+
+/** SEO metadata: title template, description, OG/Twitter, robots, icons. Affects all pages. */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-ui-18.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
-    template: `%s | ${portfolioData.name}`,
-    default: `${portfolioData.name} - ${portfolioData.role}`,
+    template: `%s | ${siteTitle}`,
+    default: siteTitle,
   },
   description: portfolioData.about,
+  applicationName: siteTitle,
   keywords: [
+    "John Doe",
+    "John Doe Portfolio",
     "Android Developer",
     "Flutter Developer",
     "Kotlin Developer",
@@ -39,8 +53,7 @@ export const metadata: Metadata = {
     "Chromium Developer",
     "Portfolio",
     "Next.js Portfolio",
-
-    "lordarcadius",
+    "portfolio-ui-18",
     "Primebook",
     "Primebook India",
     "Senior Software Engineer",
@@ -49,10 +62,15 @@ export const metadata: Metadata = {
     "Android",
     "Kotlin",
     "Flutter",
+    "Arnob Mahmud",
+    "arnobmahmud.com",
   ],
-  authors: [{ name: portfolioData.name, url: "https://www.arnobmahmud.com" }],
-  creator: portfolioData.name,
-  publisher: portfolioData.name,
+  authors: [
+    { name: "Arnob Mahmud", url: "https://www.arnobmahmud.com" },
+    { name: portfolioData.name, url: "https://www.arnobmahmud.com" },
+  ],
+  creator: "Arnob Mahmud",
+  publisher: "Arnob Mahmud",
   formatDetection: {
     email: false,
     address: false,
@@ -61,13 +79,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-ui-18.vercel.app",
-    title: `${portfolioData.name} - ${portfolioData.role}`,
+    url: siteUrl,
+    title: siteTitle,
     description: portfolioData.about,
-    siteName: `${portfolioData.name} Portfolio`,
+    siteName: siteTitle,
     images: [
       {
-        url: "https://portfolio-ui-18.vercel.app/images/profile.webp",
+        url: `${siteUrl}/images/profile.webp`,
         width: 1200,
         height: 630,
         alt: `${portfolioData.name} - ${portfolioData.role}`,
@@ -76,10 +94,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${portfolioData.name} - ${portfolioData.role}`,
+    title: siteTitle,
     description: portfolioData.about,
     creator: "@johndoe",
-    images: ["https://portfolio-ui-18.vercel.app/images/profile.webp"],
+    images: [`${siteUrl}/images/profile.webp`],
   },
   robots: {
     index: true,
@@ -102,8 +120,11 @@ export const metadata: Metadata = {
     apple: "/icons/apple-touch-icon.png",
     shortcut: "/favicon.ico",
   },
+  referrer: "origin-when-cross-origin",
+  category: "portfolio",
 };
 
+/** Root layout component: html/body, head (StructuredData), Navbar, main content, Footer, GA. */
 export default function RootLayout({
   children,
 }: Readonly<{

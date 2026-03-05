@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* CSS custom properties: used by Tailwind theme and components (e.g. primary, secondary). */
 :root {
   /* Deep rich dark tones - Slate 950 base */
   --background: #020617;
@@ -16,6 +17,7 @@
   scroll-behavior: smooth;
 }
 
+/* Tailwind v4 theme: maps CSS vars to Tailwind color/font utilities (e.g. bg-primary, text-secondary). */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -40,7 +42,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Smooth scroll offset for fixed navbar */
+/* Smooth scroll offset for fixed navbar: sections don't sit under the header when scrolling to #id. */
 [id] {
   scroll-margin-top: 80px;
 }

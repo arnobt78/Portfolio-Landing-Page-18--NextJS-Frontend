@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Single project card: thumbnail (Next Image), title, description (line-clamped), tech tags,
+ * and optional GitHub / live demo links. index is used for staggered scroll-in animation delay.
+ */
 import React from "react";
 
 import { Project } from "@/data/portfolio";

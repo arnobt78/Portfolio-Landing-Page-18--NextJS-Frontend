@@ -1,3 +1,7 @@
+/**
+ * Reusable section heading: title (gradient), optional subtitle, and gradient underline.
+ * center=true centers title/subtitle and the line; className for extra spacing/layout.
+ */
 import { cn } from '@/lib/utils';
 
 interface SectionHeadingProps {
