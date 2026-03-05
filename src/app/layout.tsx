@@ -142,9 +142,9 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen pt-20">{children}</main>
         <Footer />
-        <GoogleAnalytics
-          gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ""}
-        />
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        )}
       </body>
     </html>
   );
