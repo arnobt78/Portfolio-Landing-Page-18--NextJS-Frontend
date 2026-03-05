@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8)](https://tailwindcss.com/)
 
-A modern, single-page portfolio template built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS**. It showcases a developer profile with hero, experience timeline, tech stack, featured projects, and a contact form—ideal for learning App Router, client components, SEO metadata, and reusable UI patterns. Use it as a starter for your own portfolio or as reference material for teaching and instruction.
+A modern, single-page portfolio template built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS**. It showcases a developer profile with hero, experience timeline, tech stack, featured projects, and a contact form—ideal for learning App Router, client components, SEO metadata, and reusable UI patterns. Use it as a starter for your own portfolio or as reference material for teaching & instruction.
 
 - **Live Demo:** [https://portfolio-ui-18.vercel.app/](https://portfolio-ui-18.vercel.app/)
 
