@@ -10,7 +10,10 @@ A modern, single-page portfolio template built with **Next.js 16**, **React 19**
 
 - **Live Demo:** [https://portfolio-ui-18.vercel.app/](https://portfolio-ui-18.vercel.app/)
 
-<img width="1856" height="934" alt="Screenshot 2026-03-10 at 12 27 59" src="https://github.com/user-attachments/assets/8026bc48-db13-42b9-8938-0ab22ef97347" /> <img width="1863" height="847" alt="Screenshot 2026-03-10 at 12 28 09" src="https://github.com/user-attachments/assets/0715482e-4ad0-4998-8e7d-43fd1ae85338" /> <img width="1848" height="926" alt="Screenshot 2026-03-10 at 12 28 20" src="https://github.com/user-attachments/assets/13c3cee4-7ad4-456e-9ed5-cea04f010379" /> <img width="1832" height="782" alt="Screenshot 2026-03-10 at 12 28 34" src="https://github.com/user-attachments/assets/bbe03ef8-88da-4657-bb19-87515252e5c2" />
+![Screenshot 2026-03-10 at 12 27 59](https://github.com/user-attachments/assets/8026bc48-db13-42b9-8938-0ab22ef97347)
+![Screenshot 2026-03-10 at 12 28 09](https://github.com/user-attachments/assets/0715482e-4ad0-4998-8e7d-43fd1ae85338)
+![Screenshot 2026-03-10 at 12 28 20](https://github.com/user-attachments/assets/13c3cee4-7ad4-456e-9ed5-cea04f010379)
+![Screenshot 2026-03-10 at 12 28 34](https://github.com/user-attachments/assets/bbe03ef8-88da-4657-bb19-87515252e5c2)
 
 ## Table of Contents
 
